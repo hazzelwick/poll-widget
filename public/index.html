@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Poll Widget Example</title>
+
+    <!-- Required dependencies -->
+    <script
+      crossorigin
+      src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"
+    ></script>
+
+    <!-- Poll widget script and styles -->
+    <script src="./dist/floating-widget.iife.js"></script>
+    <link rel="stylesheet" href="./dist/poll-widget.css" />
+  </head>
+  <body>
+    <div
+      style="
+        display: flex;
+        justify-content: end;
+        max-width: 40rem;
+        margin: 0 auto;
+        width: 100%;
+      "
+    >
+      <a href="/otherpage.html">Other Page</a>
+    </div>
+    <div style="margin: 0 auto; padding: 2rem; max-width: 56rem">
+      <h1 style="font-size: 30px; font-weight: 700; margin-bottom: 2rem">
+        Example Polls
+      </h1>
+
+      <!-- First Poll -->
+      <div id="mood-poll" style="margin-bottom: 2rem"></div>
+
+      <!-- Second Poll -->
+      <div id="test-poll" style="margin-bottom: 2rem"></div>
+
+      <script>
+        window.addEventListener("load", function () {
+          // Initialize first poll
+          renderPollWidgetInline("mood-poll", {
+            pollId: "mood",
+            question: "How you feel today:",
+            options: [
+              {
+                id: 1,
+                text: "Brilliant! I have so much energy",
+              },
+              {
+                id: 2,
+                text: "Always can be worse",
+              },
+              {
+                id: 3,
+                text: "Please, end my misery",
+              },
+            ],
+          });
+
+          // Initialize second poll
+          renderPollWidgetInline("test-poll", {
+            pollId: "test",
+            question: "How you like the Opinary test:",
+            options: [
+              {
+                id: 1,
+                text: "It was great and so challenging",
+              },
+              {
+                id: 2,
+                text: "Not bad, but you can improve",
+              },
+              {
+                id: 3,
+                text: "It was a nightmare, never again",
+              },
+            ],
+          });
+
+          // renderPollWidgetFloatingButton({
+          //   pollId: "mood",
+          //   question: "How you feel today:",
+          //   options: [
+          //     {
+          //       id: 1,
+          //       text: "Brilliant! I have so much energy",
+          //     },
+          //     {
+          //       id: 2,
+          //       text: "Always can be worse",
+          //     },
+          //     {
+          //       id: 3,
+          //       text: "Please, end my misery",
+          //     },
+          //   ],
+          // });
+        });
+      </script>
+    </div>
+  </body>
+</html>
