@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Poll Widget Example</title>
 
-    <!-- Required dependencies -->
     <script
       crossorigin
       src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"
@@ -15,7 +14,6 @@
       src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"
     ></script>
 
-    <!-- Poll widget script and styles -->
     <script src="./dist/floating-widget.iife.js"></script>
     <link rel="stylesheet" href="./dist/poll-widget.css" />
   </head>
@@ -36,12 +34,10 @@
         Other Page Polls
       </h1>
 
-      <!-- First Poll -->
       <div id="other-poll" style="margin-bottom: 2rem"></div>
 
       <script>
         window.addEventListener("load", function () {
-          // Initialize first poll
           renderPollWidgetInline("other-poll", {
             pollId: "other",
             question: "Select an option:",
