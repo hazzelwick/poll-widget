@@ -19,6 +19,7 @@ export default defineConfig({
           react: "React",
           "react-dom": "ReactDOM",
         },
+        intro: 'var process = { env: { NODE_ENV: "production" } };',
       },
     },
   },
